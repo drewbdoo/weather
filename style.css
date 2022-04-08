@@ -1,0 +1,118 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #222;
+  font-family: "BIZ UDGothic", sans-serif;
+  background-image: url("https://source.unsplash.com/random/2560×1440/?landscpae");
+  font-size: 120%;
+}
+
+.card {
+  background: #000000d0;
+  color: white;
+  padding: 2em;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 420px;
+  margin: 1em;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .humidity {
+  padding: 10px;
+}*/
+
+.description {
+  margin-left: 8px;
+  text-transform: capitalize;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* .wind {
+  padding: 10px; 
+}*/
+
+button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 46px;
+  width: 46px;
+  outline: none;
+  background: #7c7c7c2b;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+input.search-bar {
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 24px;
+  background: #0dbfd12b;
+  color: white;
+  font-family: inherit;
+  font-size: 105%;
+  width: calc(100% - 100px);
+}
+
+button:hover {
+  background: #7c7c7c6b;
+}
+
+.date {
+  padding-top: 0.8em;
+}
+
+.wind {
+  padding-top: 0.8em;
+}
+
+.humidity {
+  padding-top: 0.8em;
+}
+
+h1.temp {
+  margin: 0%;
+  margin-bottom: 0.8em;
+  margin-top: .7em;
+}
+
+.weather.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+
+.weather.loading:after {
+  visibility: visible;
+  content: "Loading...";
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+.extended {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  background: #000000d0;
+  color: white;
+margin-top: 2em;
+  border-radius: 30px;
+  
+}
