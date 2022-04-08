@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "jquery": "^3.6.0"
-  }
+  },
+  "name": "weather",
+  "description": "A modest weather app",
+  "version": "0.0.1",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drewbdoo/weather.git"
+  },
+  "author": "Drew Bowers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drewbdoo/weather/issues"
+  },
+  "homepage": "https://github.com/drewbdoo/weather#readme"
 }
