@@ -1,3 +1,8 @@
+const cors = require('cors')
+
+app.use(cors())
+
+
 let weather = {
     apiKey: "493add9ac9c1331a10e9ac8df72bb4ef",
     latKey: "abb6bcc9f2859851ea07ef2aac0f43b0",
