@@ -120,9 +120,3 @@ document.querySelector(".search-bar").addEventListener('keyup', function (event)
 weather.fetchWeather("28227");
 
 
-// fetch(
-//     "https://api.openweathermap.org/data/2.5/weather?zip=" +
-//     city +
-//     "&units=imperial&appid=" +
-//     this.apiKey
-//"https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&exclude=minutelyhourlyalerts&units=imperial&appid=" + this.apiKey
