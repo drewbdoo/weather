@@ -9,7 +9,7 @@ let weather = {
     latKey: "abb6bcc9f2859851ea07ef2aac0f43b0",
     fetchWeather: function (city) {
 
-        fetch("http://api.openweathermap.org/geo/1.0/zip?zip=" + city + "&appid=" + this.apiKey,
+        fetch("https://api.openweathermap.org/geo/1.0/zip?zip=" + city + "&appid=" + this.apiKey,
         )
             .then(response => response.json())
             .then(location => {
