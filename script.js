@@ -118,9 +118,6 @@ let weather = {
 
     },
 
-
-
-
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value);
     },
@@ -129,34 +126,19 @@ let weather = {
         this.fetchMetric(document.querySelector(".search-bar").value)
     }
 
-
-
 };
 
 
 document.querySelector(".search button").addEventListener('click', function () {
-
-
     weather.search();
-    console.log(document.querySelector(".search-bar").value);
-    let starterZip = document.querySelector(".search-bar").value;
-    return starterZip;
-
-
-
-
 });
 
 
 document.querySelector(".search-bar").addEventListener('keyup', function (event) {
     if (event.key == "Enter") {
-
         weather.search();
-
     }
-
 });
-
 
 document.querySelector(".toggle").addEventListener('click', function () {
     if (document.querySelector(".search-bar").value === "") {
@@ -164,30 +146,6 @@ document.querySelector(".toggle").addEventListener('click', function () {
     } else {
         weather.searchMetric();
     }
-
 })
 
 weather.fetchWeather("28227");
-
-
-
-
-    // fetchWeather: function (city) {
-
-    //     fetch("http://api.positionstack.com/v1/forward?access_key=" + this.latKey + "&query=" + city,
-    //     )
-    //         .then(response => response.json())
-    //         .then(location => {
-    //             console.log(location);
-    //             let lat = location.data[0].latitude;
-    //             let long = location.data[0].longitude;
-    //             console.log(lat);
-    //             console.log(long);
-
-    //             return fetch(
-    //                 "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&exclude=minutelyhourlyalerts&units=imperial&appid=" + this.apiKey,
-    //             )
-    //                 .then(response => response.json())
-    //                 .then((data) => this.displayWeather(location, data));
-    //         })
-    // },
