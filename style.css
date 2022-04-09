@@ -62,7 +62,7 @@ input.search-bar {
   outline: none;
   padding: 0.4em 1em;
   border-radius: 24px;
-  background: #0dbfd12b;
+  background: #d5f2f52b;
   color: white;
   font-family: inherit;
   font-size: 105%;
@@ -88,7 +88,7 @@ button:hover {
 h1.temp {
   margin: 0%;
   margin-bottom: 0.8em;
-  margin-top: .7em;
+  margin-top: 0.7em;
 }
 
 .weather.loading {
@@ -110,9 +110,29 @@ h1.temp {
   display: flex;
   justify-content: space-around;
   align-items: stretch;
-  background: #000000d0;
   color: white;
-margin-top: 2em;
+  margin-top: 2em;
   border-radius: 30px;
-  
+  background: linear-gradient(222deg, transparent, #00eeb0, #8e14d4, #d45114);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 17s ease infinite;
+  -moz-animation: AnimationName 17s ease infinite;
+  animation: AnimationName 17s ease infinite;
+}
+
+.city {
+  animation: myAnim 2s ease-in 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

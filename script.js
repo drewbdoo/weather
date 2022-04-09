@@ -74,9 +74,9 @@ let weather = {
         document.querySelector(".date").innerText = "For your " + weekday[today];
         document.querySelector(".icon").src = 'http://openweathermap.org/img/wn/' + icon + '.png';
         document.querySelector(".description").innerText = description;
-        document.querySelector(".temp").innerText = Math.round(temp) + "°F";
-        document.querySelector(".feels").innerText = "Feels like " + Math.round(feels_like) + "°F";
-        document.querySelector(".highlo").innerText = Math.round(min) + "°F / " + Math.round(max) + "°F"
+        document.querySelector(".temp").innerText = Math.round(temp) + "°";
+        document.querySelector(".feels").innerText = "Feels like " + Math.round(feels_like) + "°";
+        document.querySelector(".highlo").innerText = Math.round(min) + "° / " + Math.round(max) + "°"
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%"
         document.querySelector(".wind").innerText = "Wind speed: " + Math.round(wind_speed) + " mph";
         document.querySelector(".weather").classList.remove("loading");
@@ -101,13 +101,13 @@ let weather = {
             let tempMin3 = data.daily[3].temp.min;
             document.querySelector(".img1").src = 'http://openweathermap.org/img/wn/' + icon1 + '.png';
             document.querySelector(".d1con").innerText = desc1;
-            document.querySelector(".d1hi").innerText = Math.round(tempMin1) + "°F/" + Math.round(tempMax1) + "°F";
+            document.querySelector(".d1hi").innerText = Math.round(tempMin1) + "°/" + Math.round(tempMax1) + "°";
             document.querySelector(".img2").src = 'http://openweathermap.org/img/wn/' + icon2 + '.png';
             document.querySelector(".d2con").innerText = desc2;
-            document.querySelector(".d2hi").innerText = Math.round(tempMin2) + "°F/" + Math.round(tempMax2) + "°F";
+            document.querySelector(".d2hi").innerText = Math.round(tempMin2) + "°/" + Math.round(tempMax2) + "°";
             document.querySelector(".img3").src = 'http://openweathermap.org/img/wn/' + icon3 + '.png';
             document.querySelector(".d3con").innerText = desc3;
-            document.querySelector(".d3hi").innerText = Math.round(tempMin3) + "°F/" + Math.round(tempMax3) + "°F";
+            document.querySelector(".d3hi").innerText = Math.round(tempMin3) + "°/" + Math.round(tempMax3) + "°";
 
 
 
