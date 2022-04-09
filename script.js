@@ -21,6 +21,25 @@ let weather = {
             })
     },
 
+    fetchMetric: function (city) {
+
+        fetch("https://api.openweathermap.org/geo/1.0/zip?zip=" + city + "&appid=" + this.apiKey,
+        )
+            .then(response => response.json())
+            .then(location => {
+                console.log(location);
+                let lat = location.lat;
+                let long = location.lon;
+                console.log(lat);
+                console.log(long);
+
+                return fetch(
+                    "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&exclude=minutelyhourlyalerts&units=metric&appid=" + this.apiKey,
+                )
+                    .then(response => response.json())
+                    .then((data) => this.displayWeather(location, data));
+            })
+    },
 
     displayWeather: function (location, data) {
         console.log(data);
@@ -55,9 +74,9 @@ let weather = {
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%"
         document.querySelector(".wind").innerText = "Wind speed: " + Math.round(wind_speed) + " mph";
         document.querySelector(".weather").classList.remove("loading");
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/random/2000×2000/?,"  + description + " )";
-     
-        
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/random/2000×2000/?," + description + " )";
+
+
         console.log(weekday[today]);
         function extended() {
             //Extended days
@@ -90,7 +109,7 @@ let weather = {
             var tomorrow = new Date(date.getTime() + 24 * 60 * 60 * 1000);
             var twoDays = new Date(date.getTime() + 2 * 24 * 60 * 60 * 1000);
             var threeDays = new Date(date.getTime() + 3 * 24 * 60 * 60 * 1000);
-            
+
             document.querySelector(".d1").innerHTML = weekday[tomorrow.getDay()];
             document.querySelector(".d2").innerHTML = weekday[twoDays.getDay()];
             document.querySelector(".d3").innerHTML = weekday[threeDays.getDay()];
@@ -106,19 +125,33 @@ let weather = {
         this.fetchWeather(document.querySelector(".search-bar").value);
     },
 
+    
+
 
 };
 
+
 document.querySelector(".search button").addEventListener('click', function () {
+    
+   
     weather.search();
+    
 
 });
 
 document.querySelector(".search-bar").addEventListener('keyup', function (event) {
     if (event.key == "Enter") {
+        
         weather.search();
+        
     }
+
 });
+
+document.querySelector(".toggle").addEventListener('click', function(){
+    console.log(document.querySelector(".search-bar").value);
+    weather.fetchMetric(document.querySelector(".search-bar").value);
+})
 
 weather.fetchWeather("28227");
 

@@ -12,14 +12,17 @@
       href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic&display=swap"
       rel="stylesheet"
     />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
     <title>Weather App</title>
   </head>
   <body>
     <div class="card">
       <div class="search">
         <input type="text" class="search-bar" placeholder="Enter Zip Code" />
-        <button>
+        <button class="search-butt">
           <svg
             stroke="currentColor"
             fill="none"
@@ -54,13 +57,11 @@
 
         <div class="humidity">Humity: 70%</div>
         <div class="wind">Wind speed: 7 mph</div>
-        
       </div>
       <h3>Extended forecast</h3>
       <div class="extended">
-        
         <div class="day1">
-          <div class="flex1 ">
+          <div class="flex1">
             <img src="" class="img1" />
             <div class="d1con"></div>
           </div>
@@ -69,17 +70,23 @@
           <p class="d1"></p>
         </div>
         <div class="day2">
-          <div class="flex1 "><img src="" class="img2" /></div>
+          <div class="flex1"><img src="" class="img2" /></div>
           <div class="d2con"></div>
           <div class="d2hi"></div>
           <p class="d2"></p>
         </div>
         <div class="day3">
-          <div class="flex1 "><img src="" class="img3" /></div>
+          <div class="flex1"><img src="" class="img3" /></div>
           <div class="d3con"></div>
           <div class="d3hi"></div>
           <p class="d3"></p>
         </div>
+      </div>
+      <div class="freedom">
+        <p>If freedom units aren't your thing, click here</p>
+        <button class="toggle">
+          <img src="./images/ukflag.jpg">
+        </button>
       </div>
     </div>
   </body>
