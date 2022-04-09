@@ -9,13 +9,13 @@ let weather = {
     latKey: "abb6bcc9f2859851ea07ef2aac0f43b0",
     fetchWeather: function (city) {
 
-        fetch("http://api.positionstack.com/v1/forward?access_key=" + this.latKey + "&query=" + city,
+        fetch("http://api.openweathermap.org/geo/1.0/zip?zip=" + city + "&appid=" + this.apiKey,
         )
             .then(response => response.json())
             .then(location => {
                 console.log(location);
-                let lat = location.data[0].latitude;
-                let long = location.data[0].longitude;
+                let lat = location.lat;
+                let long = location.lon;
                 console.log(lat);
                 console.log(long);
 
@@ -26,12 +26,34 @@ let weather = {
                     .then((data) => this.displayWeather(location, data));
             })
     },
+    // fetchWeather: function (city) {
+
+    //     fetch("http://api.positionstack.com/v1/forward?access_key=" + this.latKey + "&query=" + city,
+    //     )
+    //         .then(response => response.json())
+    //         .then(location => {
+    //             console.log(location);
+    //             let lat = location.data[0].latitude;
+    //             let long = location.data[0].longitude;
+    //             console.log(lat);
+    //             console.log(long);
+
+    //             return fetch(
+    //                 "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&exclude=minutelyhourlyalerts&units=imperial&appid=" + this.apiKey,
+    //             )
+    //                 .then(response => response.json())
+    //                 .then((data) => this.displayWeather(location, data));
+    //         })
+    // },
 
 
     displayWeather: function (location, data) {
         console.log(data);
         console.log(location);
-        let nameCity = location.data[0].locality;
+        // let nameCity = location.data[0].locality; 
+        //pos stack name
+        let nameCity = location.name;
+        // openweather name
         console.log(nameCity);
         const { icon, description } = data.current.weather[0];
         const { temp, feels_like, humidity } = data.current;
@@ -58,7 +80,7 @@ let weather = {
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%"
         document.querySelector(".wind").innerText = "Wind speed: " + Math.round(wind_speed) + " mph";
         document.querySelector(".weather").classList.remove("loading");
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/random/2560×1440/?" + nameCity + " ')";
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/random/2000×2000/?"  + description + " ')";
      
         
         console.log(weekday[today]);
