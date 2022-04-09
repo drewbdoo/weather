@@ -11,7 +11,7 @@ body {
 }
 
 .card {
-  background: #000000d0;
+  background: #00000082;
   color: white;
   padding: 2em;
   border-radius: 30px;
@@ -62,7 +62,12 @@ input.search-bar {
   outline: none;
   padding: 0.4em 1em;
   border-radius: 24px;
-  background: #d5f2f52b;
+  background: linear-gradient(311deg, #17e3c9, #db75e1, #e33d3d);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 15s ease infinite;
+  -moz-animation: AnimationName 15s ease infinite;
+  animation: AnimationName 15s ease infinite;
   color: white;
   font-family: inherit;
   font-size: 105%;
@@ -113,26 +118,26 @@ h1.temp {
   color: white;
   margin-top: 2em;
   border-radius: 30px;
-  background: linear-gradient(222deg, transparent, #00eeb0, #8e14d4, #d45114);
-  background-size: 600% 600%;
+  background: linear-gradient(311deg, #17e3c9, #db75e1, #e33d3d);
+    background-size: 600% 600%;
 
-  -webkit-animation: AnimationName 17s ease infinite;
-  -moz-animation: AnimationName 17s ease infinite;
-  animation: AnimationName 17s ease infinite;
+    -webkit-animation: AnimationName 15s ease infinite;
+    -moz-animation: AnimationName 15s ease infinite;
+    animation: AnimationName 15s ease infinite;
 }
 
-.city {
-  animation: myAnim 2s ease-in 0s 1 normal forwards;
+@-webkit-keyframes AnimationName {
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
 }
-
-@keyframes myAnim {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@-moz-keyframes AnimationName {
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
+}
+@keyframes AnimationName {
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
 }
