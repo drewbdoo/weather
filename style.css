@@ -26,9 +26,15 @@ body {
   justify-content: center;
 }
 
-/* .humidity {
-  padding: 10px;
-}*/
+.day1 {
+  padding: 1em;
+}
+
+.day2 {padding: 1em;}
+
+.day3 {
+  padding: 1em;
+}
 
 .description {
   margin-left: 8px;

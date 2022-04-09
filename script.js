@@ -125,32 +125,46 @@ let weather = {
         this.fetchWeather(document.querySelector(".search-bar").value);
     },
 
-    
+    searchMetric: function () {
+        this.fetchMetric(document.querySelector(".search-bar").value)
+    }
+
 
 
 };
 
 
 document.querySelector(".search button").addEventListener('click', function () {
-    
-   
+
+
     weather.search();
-    
+    console.log(document.querySelector(".search-bar").value);
+    let starterZip = document.querySelector(".search-bar").value;
+    return starterZip;
+
+
+
 
 });
 
+
 document.querySelector(".search-bar").addEventListener('keyup', function (event) {
     if (event.key == "Enter") {
-        
+
         weather.search();
-        
+
     }
 
 });
 
-document.querySelector(".toggle").addEventListener('click', function(){
-    console.log(document.querySelector(".search-bar").value);
-    weather.fetchMetric(document.querySelector(".search-bar").value);
+
+document.querySelector(".toggle").addEventListener('click', function () {
+    if (document.querySelector(".search-bar").value === "") {
+        weather.fetchMetric("28227");
+    } else {
+        weather.searchMetric();
+    }
+
 })
 
 weather.fetchWeather("28227");
