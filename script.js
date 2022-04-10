@@ -3,9 +3,6 @@ let weather = {
   latKey: "abb6bcc9f2859851ea07ef2aac0f43b0",
   fetchWeather: function (city) {
       console.log(city);
-    // let inputVal = document.querySelector(".search-bar").value;
-    // let inputVal = parseInt(document.querySelectorAll(".search-bar").value, 10);
-    // console.log(inputVal);
     if (!isNaN(city)) {
       fetch(
         "https://api.openweathermap.org/geo/1.0/zip?zip=" +
@@ -122,10 +119,6 @@ let weather = {
     console.log(location);
     let nameCity = location.name;
     console.log(nameCity);
-    //pos stack name
-    // let nameCity = document.querySelector(".search-bar").value;
-    // let stringName = charAt(toString(nameCity));
-    // openweather name
     const { icon, description } = data.current.weather[0];
     const { temp, feels_like, humidity } = data.current;
     const { min, max } = data.daily[0].temp;
