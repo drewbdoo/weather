@@ -8,6 +8,8 @@ body {
   font-family: "BIZ UDGothic", sans-serif;
   background-image: url("https://source.unsplash.com/random/2560×1440/?landscpae");
   font-size: 120%;
+ 
+
 }
 
 .card {
@@ -18,6 +20,7 @@ body {
   width: 100%;
   max-width: 420px;
   margin: 1em;
+  margin-top: 10em;
 }
 
 .search {
