@@ -31,13 +31,37 @@ body {
 
 .day1 {
   padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
 }
 
-.day2 {padding: 1em;}
+.day2 {padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;}
 
 .day3 {
   padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
 }
+
+p.d1 {
+  justify-self: self-end;
+  margin-top: auto;
+}
+p.d2 {
+  justify-self: self-end;
+  margin-top: auto;
+}
+p.d3 {
+  justify-self: self-end;
+  margin-top: auto;
+}
+
+
 
 .description {
   margin-left: 8px;
